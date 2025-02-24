@@ -184,13 +184,12 @@ Utilizar soluções open-source quando possível
 3. **Código**:
    - Código limpo e bem organizado
    - Comentários relevantes
-   - Testes unitários (quando aplicável)
    - Tratamento de erros
 
 ## 🚀 Como Começar
 
 1. Clone o repositório
-2. Crie uma branch com seu nome: `git checkout -b seu-nome`
+2. Crie uma branch com seu nome
 3. Escolha qual teste deseja iniciar
 4. Leia atentamente a documentação específica de cada teste
 5. Implemente sua solução
@@ -207,13 +206,6 @@ Utilizar soluções open-source quando possível
 - Considerações sobre escalabilidade
 - Tratamento de edge cases
 - Boas práticas de desenvolvimento
-
-## ⏱️ Tempo Esperado
-
-- Teste 1: ~35 minutos
-- Teste 2: ~35 minutos
-- Teste 3: ~35 minutos
-- Teste 4: ~35 minutos
 
 ## 📬 Entrega
 
