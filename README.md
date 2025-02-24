@@ -50,7 +50,7 @@ O candidato deve modelar as tabelas em PostgreSQL ou MySQL, garantindo boas prá
 
 Requisitos:
 
-1 - Criar a estrutura das tabelas usuarios, pedidos, produtos e pedidos_produtos (tabela de associação N:N).
+1 - Criar a estrutura das tabelas e tabela de associação N:N.
 2 - Definir índices apropriados para otimizar buscas frequentes.
 3 - Explicar como garantir consistência de dados e evitar locking em cenários de concorrência.
 
@@ -95,7 +95,7 @@ Parte 1: Definição da Arquitetura
 
 O candidato deve definir como a aplicação será estruturada:
 
-1 - Qual tecnologia usará para a fila de mensagens?
+1 - Qual tecnologia usará para a fila de mensagens? 
 2 - Como a API será organizada? 
 3 - Como garantir que o sistema seja escalável e resiliente?
 
