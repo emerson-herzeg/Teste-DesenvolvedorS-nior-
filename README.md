@@ -59,9 +59,9 @@ Parte 2: Queries para Análise de Performance
 
 O candidato deve escrever consultas otimizadas para os seguintes casos:
 
-1️ - Recuperar os últimos 10 pedidos de um usuário específico, incluindo os produtos comprados.
-2️ - Obter os produtos mais vendidos nos últimos 30 dias, ordenados do mais vendido para o menos vendido.
-3️ - Atualizar o estoque de um produto durante um pedido, garantindo que múltiplas compras simultâneas não causem inconsistências.
+ - Recuperar os últimos 10 pedidos de um usuário específico, incluindo os produtos comprados.
+ - Obter os produtos mais vendidos nos últimos 30 dias, ordenados do mais vendido para o menos vendido.
+ - Atualizar o estoque de um produto durante um pedido, garantindo que múltiplas compras simultâneas não causem inconsistências.
 
 O candidato deve explicar como evitar race conditions
 
@@ -85,19 +85,19 @@ Desafio:
 
 Sua tarefa principal é dividir essa funcionalidade em pequenas partes, delegando atividades ao pleno e aos juniores, garantindo eficiência e boas práticas.
 
-1️ - A API recebe um PDF e armazena o arquivo em um bucket S3 ou similar.
-2️ - Uma fila assíncrona processa os PDFs, convertendo-os em texto usando OCR (Tesseract, AWS Textract, etc.).
-3️ - O texto extraído é salvo no banco de dados, vinculado ao usuário que enviou o PDF.
-4️ - Após a extração, o sistema dispara um email ao usuário notificando que seu arquivo foi processado.
-5️ - A arquitetura deve ser escalável e suportar picos de tráfego.
+ - A API recebe um PDF e armazena o arquivo em um bucket S3 ou similar.
+ - Uma fila assíncrona processa os PDFs, convertendo-os em texto usando OCR (Tesseract, AWS Textract, etc.).
+ - O texto extraído é salvo no banco de dados, vinculado ao usuário que enviou o PDF.
+ - Após a extração, o sistema dispara um email ao usuário notificando que seu arquivo foi processado.
+ - A arquitetura deve ser escalável e suportar picos de tráfego.
 
 Parte 1: Definição da Arquitetura
 
 O candidato deve definir como a aplicação será estruturada:
 
-1 - Qual tecnologia usará para a fila de mensagens? 
-2 - Como a API será organizada? 
-3 - Como garantir que o sistema seja escalável e resiliente?
+ - Qual tecnologia usará para a fila de mensagens? 
+ - Como a API será organizada? 
+ - Como garantir que o sistema seja escalável e resiliente?
 
 Parte 2: Delegação de Tarefas
 
@@ -119,11 +119,11 @@ Cenário:
 
 Uma empresa precisa automatizar a extração de dados de documentos em PDF que estão disponíveis em portais governamentais e sites públicos. O sistema deve:
 
-1 - Baixar os PDFs automaticamente, navegando por sites que exigem login, resolução de captchas, preenchimento de formulários ou paginação.
-2 - Converter os PDFs para texto de forma eficiente.
-3 - Identificar e extrair nomes próprios e documentos (CPF, CNPJ, RG, Passaporte, etc.).
-4 - Associar os dados ao PDF original e armazená-los em um banco de dados.
-5 - Implementar uma estrutura de baixo custo, já que o sistema precisará processar milhões de documentos.
+ - Baixar os PDFs automaticamente, navegando por sites que exigem login, resolução de captchas, preenchimento de formulários ou paginação.
+ - Converter os PDFs para texto de forma eficiente.
+ - Identificar e extrair nomes próprios e documentos (CPF, CNPJ, RG, Passaporte, etc.).
+ - Associar os dados ao PDF original e armazená-los em um banco de dados.
+ - Implementar uma estrutura de baixo custo, já que o sistema precisará processar milhões de documentos.
 
 Parte 1: Definição da Arquitetura
 
@@ -217,10 +217,10 @@ Utilizar soluções open-source quando possível
 
 ## 📬 Entrega
 
-1. Certifique-se que todo o código está commitado
-2. Verifique se a documentação está completa
-3. Confirme se todos os requisitos foram atendidos
-4. Envie o link do seu repositório para avaliação
+. Certifique-se que todo o código está commitado
+. Verifique se a documentação está completa
+. Confirme se todos os requisitos foram atendidos
+. Envie o link do seu repositório para avaliação
 
 ## 🤝 Boa Sorte!
 
