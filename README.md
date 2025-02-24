@@ -50,9 +50,9 @@ O candidato deve modelar as tabelas em PostgreSQL ou MySQL, garantindo boas prá
 
 Requisitos:
 
-1 - Criar a estrutura das tabelas e tabela de associação N:N.
-2 - Definir índices apropriados para otimizar buscas frequentes.
-3 - Explicar como garantir consistência de dados e evitar locking em cenários de concorrência.
+ - Criar a estrutura das tabelas e tabela de associação N:N.
+ - Definir índices apropriados para otimizar buscas frequentes.
+ - Explicar como garantir consistência de dados e evitar locking em cenários de concorrência.
 
 
 Parte 2: Queries para Análise de Performance
