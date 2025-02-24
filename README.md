@@ -7,58 +7,167 @@ Este repositório contém uma série de testes técnicos para a posição de Des
 O repositório está organizado em 4 testes distintos, cada um focando em diferentes competências:
 
 ### 1. Teste de Lógica Avançada
-- **Objetivo**: Avaliar capacidade de otimização e processamento de grandes volumes de dados
-- **Arquivos**:
-  - `transacoes1m.json` (1 milhão de registros)
-  - `transacoes1k.json` (1 mil registros para testes)
-- **Desafio**: Implementar algoritmo de detecção de transações duplicadas considerando:
-  - Mesmo valor
-  - Mesmo pagador e recebedor
-  - Diferença máxima de 10 segundos
-- **Critérios de Avaliação**:
-  - Eficiência do algoritmo
-  - Uso correto de estruturas de dados
-  - Clareza e organização do código
-  - Performance e tempo de execução
+Algoritmo de Processamento de Dados
+
+Objetivo: Avaliar a habilidade de resolver problemas complexos e otimizar algoritmos.
+
+Existem 1 milhão de transações bancárias no arquivo "transacoes1m.json" é necessário implementar um algoritmo que detecta transações duplicadas considerando:
+ - Mesmo valor.
+ - Mesmo pagador e recebedor.
+ - Diferença de tempo de no máximo 10 segundos.
+
+As transações duplicadas deverão ser ignoradas e as demais inseridas em um banco de dados da sua escolha.
+
+O código deve ser otimizado para performance e exibir o tempo de duração no final da execução.
+
+O arquivo "transacoes1k.json" possui mil transações que podem ser utilizadas para testes antes da solução final.
+
+Critérios de avaliação:
+
+Eficiência do algoritmo.
+Uso correto de estruturas de dados.
+Clareza e organização do código.
 https://drive.google.com/drive/folders/1Dc695kkqb6Gt2G4inLzWT1-T3s4c9-15?usp=drive_link 
 
 ### 2. Teste de Banco de Dados
-- **Objetivo**: Avaliar conhecimentos avançados em modelagem e otimização de banco de dados
-- **Cenário**: Sistema de e-commerce com alto volume de transações
-- **Requisitos**:
-  - Modelagem de tabelas (usuarios, pedidos, produtos)
-  - Implementação de relacionamentos N:N
-  - Otimização de queries
-  - Estratégias de concorrência
-- **Entregáveis**:
-  - Scripts SQL de criação das tabelas
-  - Queries otimizadas
-  - Documentação das decisões de modelagem
+Modelagem e Query Performance
+
+Objetivo: Avaliar o conhecimento avançado do candidato em modelagem de banco de dados, indexação, otimização de queries e concorrência.
+
+Cenário:
+
+Você foi contratado para otimizar a performance de um sistema de e-commerce que possui milhões de registros em sua base de dados. O sistema possui três entidades principais:
+
+Usuários (usuarios)
+Pedidos (pedidos)
+Produtos (produtos)
+
+Cada pedido pode conter vários produtos, e cada produto pode estar em vários pedidos (relação N:N). O banco de dados atual sofre com lentidão quando há muitos acessos simultâneos e tem problemas de concorrência ao atualizar os estoques.
+
+Parte 1: Modelagem de Banco de Dados
+
+O candidato deve modelar as tabelas em PostgreSQL ou MySQL, garantindo boas práticas de normalização e indexação.
+
+Requisitos:
+
+1 - Criar a estrutura das tabelas usuarios, pedidos, produtos e pedidos_produtos (tabela de associação N:N).
+2 - Definir índices apropriados para otimizar buscas frequentes.
+3 - Explicar como garantir consistência de dados e evitar locking em cenários de concorrência.
+
+
+Parte 2: Queries para Análise de Performance
+
+O candidato deve escrever consultas otimizadas para os seguintes casos:
+
+1️ - Recuperar os últimos 10 pedidos de um usuário específico, incluindo os produtos comprados.
+2️ - Obter os produtos mais vendidos nos últimos 30 dias, ordenados do mais vendido para o menos vendido.
+3️ - Atualizar o estoque de um produto durante um pedido, garantindo que múltiplas compras simultâneas não causem inconsistências.
+
+O candidato deve explicar como evitar race conditions
+
+Parte 3: Solução para Escalabilidade
+
+Como você escalaria esse sistema para suportar 1 milhão de pedidos por dia?
+
 
 ### 3. Teste de Arquitetura e Delegação
-- **Objetivo**: Avaliar capacidade de liderança técnica e design de sistemas
-- **Cenário**: Sistema de processamento de documentos PDF
-- **Requisitos**:
-  - Definição da arquitetura do sistema
-  - Planejamento de delegação de tarefas
-  - Estratégias de escalabilidade
-- **Entregáveis**:
-  - Documentação da arquitetura
-  - Plano de divisão de tarefas
-  - Justificativas técnicas
+Arquitetura e Delegação de Tarefas
+
+Objetivo: Avaliar a capacidade do candidato de liderar um time, dividir tarefas complexas e definir responsabilidades.
+
+Cenário:
+
+Você é o desenvolvedor sênior responsável pela equipe de backend em uma empresa de tecnologia. Sua equipe possui 1 desenvolvedor pleno e 2 desenvolvedores juniores.
+
+A empresa precisa implementar uma fila de processamento de documentos para um sistema de RH que recebe arquivos PDF e os converte para texto estruturado antes de enviá-los por email. O fluxo deve ser assíncrono e escalável, garantindo que a carga do sistema não impacte o tempo de resposta da API.
+
+Desafio:
+
+Sua tarefa principal é dividir essa funcionalidade em pequenas partes, delegando atividades ao pleno e aos juniores, garantindo eficiência e boas práticas.
+
+1️ - A API recebe um PDF e armazena o arquivo em um bucket S3 ou similar.
+2️ - Uma fila assíncrona processa os PDFs, convertendo-os em texto usando OCR (Tesseract, AWS Textract, etc.).
+3️ - O texto extraído é salvo no banco de dados, vinculado ao usuário que enviou o PDF.
+4️ - Após a extração, o sistema dispara um email ao usuário notificando que seu arquivo foi processado.
+5️ - A arquitetura deve ser escalável e suportar picos de tráfego.
+
+Parte 1: Definição da Arquitetura
+
+O candidato deve definir como a aplicação será estruturada:
+
+1 - Qual tecnologia usará para a fila de mensagens?
+2 - Como a API será organizada? 
+3 - Como garantir que o sistema seja escalável e resiliente?
+
+Parte 2: Delegação de Tarefas
+
+Agora, o candidato deve dividir a implementação entre a equipe:
+
+Sênior (Você mesmo)
+Pleno
+Júnior 1
+Júnior 2
+
+O candidato deve justificar a divisão e garantir que os juniores não fiquem com tarefas muito complexas, mas ainda contribuam com a entrega.
 
 ### 4. Teste de Arquitetura e Web Scraping
-- **Objetivo**: Avaliar conhecimentos em automação e otimização de custos
-- **Cenário**: Sistema de extração de dados de PDFs via web
-- **Requisitos**:
-  - Arquitetura completa do sistema
-  - Estratégias de baixo custo
-  - Soluções para desafios específicos (captcha, login, etc)
-- **Entregáveis**:
-  - Documentação da arquitetura proposta
-  - Escolha justificada de tecnologias
-  - Estratégias de otimização de custos
+Arquitetura de Sistema para Extração de Dados de PDFs com Web Scraping
 
+Objetivo: Avaliar a capacidade do desenvolvedor sênior de projetar uma arquitetura eficiente e escalável para extração de dados a partir de PDFs baixados automaticamente via navegador, minimizando custos operacionais.
+
+Cenário:
+
+Uma empresa precisa automatizar a extração de dados de documentos em PDF que estão disponíveis em portais governamentais e sites públicos. O sistema deve:
+
+1 - Baixar os PDFs automaticamente, navegando por sites que exigem login, resolução de captchas, preenchimento de formulários ou paginação.
+2 - Converter os PDFs para texto de forma eficiente.
+3 - Identificar e extrair nomes próprios e documentos (CPF, CNPJ, RG, Passaporte, etc.).
+4 - Associar os dados ao PDF original e armazená-los em um banco de dados.
+5 - Implementar uma estrutura de baixo custo, já que o sistema precisará processar milhões de documentos.
+
+Parte 1: Definição da Arquitetura
+
+O candidato deve projetar a arquitetura completa do sistema, incluindo:
+
+- Servidores necessários (Backend, Banco de Dados, Workers, Cache, etc.).
+- Infraestrutura (Cloud vs. On-Premises) com justificativa para escolha.
+- Estratégia para escalabilidade e paralelismo sem inflacionar os custos.
+- Mecanismo de balanceamento de carga e recuperação de falhas.
+
+Parte 2: Tecnologias e Ferramentas
+
+O candidato deve justificar quais tecnologias usaria e por quê:
+
+Linguagens
+Bibliotecas
+Banco de Dados (para buscas eficientes).
+Armazenamento
+Cache
+Monitoramento
+
+Parte 3: Modelagem do Banco de Dados
+
+O candidato deve estruturar as tabelas considerando:
+
+Relação entre PDFs, nomes e documentos identificados.
+Otimização para consultas rápidas (indexação, particionamento de tabelas).
+Como garantir integridade e consistência dos dados.
+
+Parte 4: O candidato deve propor um método eficiente para associar nomes e documentos, considerando que:
+
+Os nomes não estão necessariamente vinculados a um documento.
+O sistema precisa identificar se um nome e um documento estão relacionados com base no contexto da extração.
+
+Como garantir que um CPF ou CNPJ encontrado no texto realmente pertence a um nome extraído?
+
+Parte 5: Estratégia para Baixo Custo
+
+A empresa quer gastar o mínimo possível, então o candidato deve propor estratégias para:
+
+Minimizar custos com servidores
+Evitar desperdício de processamento
+Evitar armazenamento desnecessário
+Utilizar soluções open-source quando possível
 ## 📋 Instruções Gerais
 
 1. **Organização**:
